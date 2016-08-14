@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: 9.99
+  status_payment_id: 
+  kind_payment_id: 
+
+two:
+  value: 9.99
+  status_payment_id: 
+  kind_payment_id: 

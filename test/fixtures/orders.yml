@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_date: 2016-08-03
+  disptch_date: 2016-08-03
+  delivery_date: 2016-08-03
+  freight: 9.99
+  user_id: 
+  status_order_id: 
+  payment_id: 
+
+two:
+  request_date: 2016-08-03
+  disptch_date: 2016-08-03
+  delivery_date: 2016-08-03
+  freight: 9.99
+  user_id: 
+  status_order_id: 
+  payment_id: 

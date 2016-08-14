@@ -1,0 +1,193 @@
+<h2>Checkout Process</h2>
+
+	
+
+
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">STEP 1: CHECKOUT OPTIONS</a></h4>
+        </div>
+ 
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+							<div class="span4">
+								<h4>New Registration</h4>
+								<form>
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+										Register Account
+									</label>
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+										Guest Checkout
+									</label>
+									<button class="btn btn-primary">Continue</button>
+								</form>
+								<em>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</em>
+							</div>
+
+							<div class="span4 offset2">
+								<h4>Registered User</h4>
+								<form>
+									<label>Email</label>
+									<input type="text" name="email" id="email" class="form-control"/>
+									
+									<label>Password</label>
+									<input type="text" name="password" id="password" class="form-control"/>
+									<br />
+									<a href="#">forgot password?</a>
+									<br />
+									<button class="btn btn-primary">Login</button>
+								</form>
+							</div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">STEP 2: ACCOUNT & BILLING DETAILS</a></h4>
+        </div>
+ 
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+                <form>
+									<label> First Name:</label>
+									<input type="text" class="form-control input-md-300" value="" name="firstname">
+
+									<label> Last Name:</label>
+									<input type="text" class="form-control input-md-300" value="" name="lastname">
+
+									<label>Company:</label>
+									<input type="text" class="form-control input-md-300" value="" name="company">
+
+									<label> Company ID:</label>
+									<input type="text" class="form-control input-md-300" value="" name="company_id">
+
+									<label> Address 1:</label>
+									<input type="text" class="form-control input-md-300" value="" name="address_1">
+
+									<label>Address 2:</label>
+									<input type="text" class="form-control input-md-300" value="" name="address_2">
+
+									<label> City:</label>
+									<input type="text" class="form-control input-md-300" value="" name="city">
+
+									<label> Post Code:</label>
+									<input type="text" class="form-control input-md-300" value="" name="postcode">
+
+									<label> Country:</label>
+									<select class="form-control input-md-300" name="country_id">
+										<option value=""> --- Please Select --- </option>
+										<option value="244">Aaland Islands</option>
+										<option value="1">Afghanistan</option>
+									</select>
+
+
+									<label> Region / State:</label>
+									<select class="form-control input-md-300" name="zone_id">
+										<option value=""> --- Please Select --- </option>
+										<option value="3513">Aberdeen</option>
+										<option value="3514">Aberdeenshire</option>
+									</select>
+									<br />
+									<button class="btn btn-primary">Continue</button>
+								</form>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">STEP 3: SHIPPING METHOD</a></h4>
+        </div>
+ 
+        <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+                <form>
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+										Free Shipping <b>($0.00)</b>
+									</label>
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+										Flat Shipping Rate <b>($10.00)</b>
+									</label>
+									<button class="btn btn-primary">Continue</button>
+								</form>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">STEP 4: PAYMENT METHOD</a></h4>
+        </div>
+ 
+        <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+                <form>
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+										Paypal</b>
+									</label>
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+										Cash on Delivery</b>
+									</label>
+									<button class="btn btn-primary">Continue</button>
+								</form>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">STEP 5: CONFIRM ORDER</a></h4>
+        </div>
+ 
+        <div id="collapseFive" class="panel-collapse collapse">
+            <div class="panel-body">
+                <table class="table table-striped table-hover">
+									<thead>
+										<tr>
+											<th>Item Name</th>
+											<th>Qty</th>
+											<th>Unit Price</th>
+											<th>Total</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>AB29837</td>
+											<td>1</td>
+											<td>$333.33</td>
+											<td>$333.33</td>
+										</tr>
+										<tr>
+											<td>AC34423</td>
+											<td>2</td>
+											<td>$333.33</td>
+											<td>$666.66</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<dl class="dl-horizontal pull-right">
+									<dt>Sub-total:</dt>
+									<dd>$999.99</dd>
+
+									<dt>Shipping Cost:</dt>
+									<dd>$0.01</dd>
+
+									<dt>Total:</dt>
+									<dd>$1000.00</dd>
+								</dl>
+								<div class="clearfix"></div>
+								<a href="#" class="btn btn-success pull-right">Confirm Order</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+

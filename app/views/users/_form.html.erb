@@ -1,0 +1,39 @@
+<%= form_for(@user, html: { :multipart => true }) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, "Name:", class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <br><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, "Email:", class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <br><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, "Password:", class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <br><br>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
+
+<% end %>
+

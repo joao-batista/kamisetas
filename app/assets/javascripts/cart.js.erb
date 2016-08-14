@@ -1,0 +1,86 @@
+/* class Cart */
+Cart = (function(element) {
+    
+    function Cart( element ) {
+      this.element = element;
+      this.items   = this.items();
+      this.total = this.total();
+      this.quantity = this.quantity();
+    }
+    
+    Cart.prototype.items = function( ) {
+			var list = [];
+			var items = this.element.find( ".item" );
+
+			items.each( function() {
+				list.push( new Item( $(this) ) );
+			});
+
+			return list;
+    }
+
+    Cart.prototype.total = function( ) {
+    	var total = 0;
+
+    	$.each( this.items, function( index, item ){
+			    total += item.total;
+			});
+
+    	return total;
+    }
+
+    Cart.prototype.quantity = function( ) {
+    	var quantity = 0;
+
+    	$.each( this.items, function( index, item ){
+    		quantity += item.quantity;
+    	});
+
+    	return quantity;
+    }
+
+    Cart.prototype.isEmpty = function( ) {
+    	return this.total === 0;
+    }
+
+    Cart.prototype.clear = function( ) {
+    	$('#cart').html('<h1>Emptity Cart</h1>');
+    	$("#cart_quantity").html("0");
+    }
+
+    Cart.prototype.update = function( ) {
+    	$("#cart_total").html( this.total );
+			$("#cart_sub_total").html( this.total );
+			$("#cart_quantity").html( this.quantity );
+    }
+
+    return Cart;
+})();
+
+/* class Item */
+Item = (function(element) {
+    
+    function Item( element ) {
+      this.element = element;
+
+      this.id = this.id();
+      this.total = this.total();
+      this.quantity = this.quantity();
+    }
+    
+    Item.prototype.id = function( ) {
+      return this.element.attr( 'id' );
+    }
+
+    Item.prototype.total = function( ) {
+      var string = this.element.find( "#total" + this.id ).text();
+      return parseFloat(string);
+    }
+
+    Item.prototype.quantity = function( ) {
+      var string = this.element.find( "#quantity" + this.id ).val();
+      return parseFloat(string);
+    }
+
+    return Item;
+})();

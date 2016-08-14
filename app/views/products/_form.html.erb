@@ -1,0 +1,60 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, "Name:", class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <br><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, "Price:", class: "col-md-2 control-label" %>
+    <div class="col-md-2">
+      <%= f.text_field :price, class: "form-control" %>
+    </div>
+    <br><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :quantity, "Quantity:", class: "col-md-2 control-label" %>
+    <div class="col-md-2">
+      <%= f.text_field :quantity, class: "form-control" %>
+    </div>
+    <br><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :category_id, "Category:", class: "col-md-2 control-label" %>
+    <div class="col-md-2">
+      <%= f.collection_select :category_id, categories, :id, :description, 
+      {prompt: "Select a category", selected: @product.category_id}, {class: "form-control"} %>
+    </div>
+    <br><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, "Description:", class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+    <br><br><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :picture, "Picture:", class: "col-md-2 control-label" %>
+    <div class="col-md-6">
+      <%= f.file_field :picture %>
+    </div>
+    <br><br>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
+
+<% end %>

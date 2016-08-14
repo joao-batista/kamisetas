@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kamisetas</title>
+    <meta charset="utf-8">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <script>
+    <%= yield :js %>
+  </script>
+  <body>
+
+    <!--menu superior -->
+    <%= render 'layouts/navbar' %>
+
+    <div class="container">
+      <div class="row">
+        <!--menu lateral -->
+        <% if display_sidebar? %>
+          <%= render 'layouts/sidebar' %>
+        <% end %> 
+
+        <!--conteúdo -->
+        <div class=<%= div_content_size %> >
+          <%= yield %>
+        </div>
+
+      </div>
+    </div>
+
+    <!--Footer -->
+   
+    <div class="col-md-12 end-box ">
+        &copy; 2014 | &nbsp; All Rights Reserved | &nbsp; Your Company Name
+    </div>
+
+  </body>
+</html>

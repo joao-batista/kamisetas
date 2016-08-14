@@ -1,0 +1,22 @@
+<div class="col-md-3">
+  <div class="list-group">
+    <%= link_to('Category', '', class: "list-group-item active") %>
+    <% categories.each do |category| %>
+      <%= link_to(category.description, products_path, class: "list-group-item") %>
+    <% end %>
+  </div>
+  <div>
+      <a href="#" class="list-group-item active ">Size</a>
+      <ul class="list-group">
+        <li class="list-group-item">Men's Clothing</li>
+        <li class="list-group-item">Women's Clothing</li>
+        <li class="list-group-item">Kid's Wear</li>
+      </ul>
+  </div>
+  <div class="list-group">
+    <%= link_to('Price', '', class: "list-group-item active") %>
+    <% precos.each do |preco| %>
+      <%= link_to(preco[1], products_path, class: "list-group-item") %>
+    <% end %>
+  </div>
+</div>

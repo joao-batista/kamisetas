@@ -1,0 +1,68 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand div_image" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- area de login -->
+      <div id="login_logout" >
+        <% if user_signed_in? %> 
+          <%= render 'layouts/menu_logout' %> 
+        <% else %> 
+          <%= render 'layouts/menu_login' %> 
+        <% end %>
+      </div>
+
+      <!-- area do carrinho -->
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+            <span class="glyphicon glyphicon-shopping-cart"></span> 
+            <span id="cart_quantity"><%= current_order.quantity_items %></span> - Item(s)
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-cart" role="menu">
+              <li>
+                <% if current_order.no_empty? %>
+                  <% current_order.items.each do |item| %>
+                    <span class="item" id="_menu_<%= item.id %>">
+                      <span class="item-left">
+                          <%= image_tag(item.product.picture.thumb.url, size: "50x50") %>
+                          <span class="item-info">
+                              <span><%= truncate(item.name, length: 20) %></span>
+                              <span><%= item.unity_price %></span>
+                          </span>
+                      </span>
+                    </span>
+                  <% end %>
+                <% else %>
+                  <a class="text-center" href="">Empty Cart</a>
+                <% end %>
+              </li>
+              <li class="divider"></li>
+              <li><%= link_to 'View Cart', items_path , class: "text-center" %></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- area de pesquisa -->
+      <form class="navbar-form navbar-right" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Pesquisar" id="search">
+          <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+

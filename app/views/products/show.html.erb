@@ -1,0 +1,66 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="flexslider">
+				  <ul class="slides">
+				    <li>
+				      <%= image_tag(@product.picture.thumb.url) %>
+				    </li>
+				    <li>
+				      <%= image_tag(@product.picture.thumb.url) %>
+				    </li>
+				    <li>
+				      <%= image_tag(@product.picture.thumb.url) %>
+				    </li>
+				    <li>
+				      <%= image_tag(@product.picture.thumb.url) %>
+				    </li>
+				  </ul>
+				</div>
+			</div>
+
+			<div class="col-md-8">
+				<h4><%= @product.name %></h4>
+				<p><%= @product.description %></p>
+				<h4><%= @product.price %></h4>
+				<h5>Options</h5>
+
+				<!-- form do carrinho -->
+				<%= form_tag(items_path, method: "post") do %>
+					<%= hidden_field_tag :id, @product.id %>
+					<label style="width: 10%">
+						<input type="text" id="quantity" name="quantity" 
+						value="1" class="form-control" style="width: 100%" />
+					</label>
+					&nbsp;Qty
+					<br>
+				  <button class="btn btn-primary">Add to Chart</button>
+				<% end %>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-9">
+				<ul class="nav nav-tabs" id="tabs">
+					<li class="active"><a href="#description">Description</a></li>
+					<li><a href="#reviews"><span class="badge badge-inverse"></span> Reviews</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="description">
+						<p>
+							<%= @product.description %>
+						</p>
+					</div>
+					<div class="tab-pane" id="reviews">...</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('.flexslider').flexslider({
+    animation: "slide"
+  });
+</script>

@@ -1,0 +1,54 @@
+
+<div class="flexslider">
+  <ul class="slides">
+    <li><%= image_tag("home/01") %></li>
+    <li><%= image_tag("home/02") %></li>
+    <li><%= image_tag("home/03") %></li>
+  </ul>
+</div>
+
+<div>
+  <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Clothing</a></li>
+      <li class="active">Men's Clothing</li>
+  </ol>
+</div>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+        <div class="thumbnail">
+            <%= link_to(image_tag(product.picture.thumb.url), product) %>
+            <div class="caption">
+                <p><%= truncate(product.name, length: 25) %></p>
+                <p>
+                  <%= form_tag(items_path, method: "post") do %>
+                    <%= hidden_field_tag :id, product.id %>
+                    <%= hidden_field_tag :quantity, 1 %>
+                    <button class="btn btn-success">Add to Chart</button>
+                    <%= link_to("See Details", product, class: "btn btn-primary") %>
+                  <% end %>
+                </p>
+            </div>
+             <p>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </p>
+        </div>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+    <ul class="alg-right-pad">
+        <%= paginate @products %>
+    </ul>
+</div>
+
+<script type="text/javascript">
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+</script>

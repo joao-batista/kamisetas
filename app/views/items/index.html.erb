@@ -1,0 +1,109 @@
+<h2>Shopping Cart</h2>
+
+
+<% if @items.any? %>
+<div class="container" id="cart">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Total</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @items.each do |item| %>
+          <tr id="_<%= item.id %>" class="item">
+            <td class="col-sm-8 col-md-6">
+              <div class="media">
+              	<%= link_to products_path, :class => "pull-left" do %>
+                	<%= image_tag(item.product.picture.thumb.url, size: "100x100") %> 
+                <% end %>
+                <div class="media-body">
+                    <h4 class="media-heading"><%= item.name %></h4>
+                    <span>Status: </span>
+                    <span class="text-success"><strong>In Stock</strong></span>
+                </div>
+              </div>
+            </td>
+            <td class="col-sm-1 col-md-1" style="text-align: center">
+            	<%= text_field_tag :quantity, item.quantity, class: "form-control", 
+              id: "quantity_#{item.id}" %>
+            </td>
+            <td class="col-sm-1 col-md-1 text-center">
+            	<strong><%= item.unity_price %></strong>
+            </td>
+            <td class="col-sm-1 col-md-1 text-center">
+            	<strong id="total_<%= item.id %>"><%= item.total_price %></strong>
+            </td>
+            <td class="col-sm-1 col-md-1">
+              <%= link_to 'Remove', item_path(item.product.id), method: :delete, 
+							remote: true, id: "remove_item_#{item.id}", class: "btn btn-danger remover" %>
+            </td>
+          </tr>
+          <script>
+					  $('#remove_item_<%= item.id %>').bind('ajax:success', function(){
+					    
+              $('#_<%= item.id %>').remove();
+					    $('#_menu_<%= item.id %>').remove();
+
+              var cart = new Cart($("#cart"));
+              if(cart.isEmpty())
+                cart.clear();
+              else
+                cart.update();
+					  });
+					</script>
+          <% end %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><h5>Subtotal</h5></td>
+            <td class="text-right">
+            	<h5><strong><%= current_order.total_price %></strong></h5>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><h5>Estimated shipping</h5></td>
+            <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td ><h3>Total</h3></td>
+            <td class="text-right">
+            	<h3><strong id="cart_total"><%= current_order.total_price %></strong></h3>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+	            <%= link_to products_path, :class => "btn btn-default" do %>
+							  <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+							<% end %>
+            </td>
+            <td>
+            	<%= link_to 'Check out', orders_path , class: "btn btn-success pull-right"%>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<% else %>
+	<h1>Emptity Cart</h1>
+<% end %>
+
+
