@@ -25,6 +25,7 @@ gem 'kaminari'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-script-source', '1.8.0'
 # Rails wrapper for the Flexslider 2
 gem 'flexslider'
 # See https://github.com/rails/execjs#readme for more supported runtimes

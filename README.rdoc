@@ -10,10 +10,10 @@ Things you may want to cover:
 * Rails: 4.2.5
 
 * System dependencies
-	<tt>
+	
 	- ImageMagik: http://www.redmine.org/projects/redmine/wiki/HowTo_install_rmagick_gem_on_Windows
   - Mailcatcher: gem install mailcatcher
-  </tt>
+  
 
 * Configuration
 
@@ -26,5 +26,4 @@ Things you may want to cover:
 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+![](preview/printscreen.png)
