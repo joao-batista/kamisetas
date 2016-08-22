@@ -26,4 +26,4 @@ Things you may want to cover:
 
 
 
-![](preview/printscreen.png)
+https://github.com/joao-batista/kamisetas/blob/master/preview/printscreen.png
