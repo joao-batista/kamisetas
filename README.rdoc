@@ -11,7 +11,7 @@ Things you may want to cover:
 
 * System dependencies
 	
-- ImageMagik: http://www.redmine.org/projects/redmine/wiki/HowTo_install_rmagick_gem_on_Windows
+  - ImageMagik: http://www.redmine.org/projects/redmine/wiki/HowTo_install_rmagick_gem_on_Windows
   - Mailcatcher: gem install mailcatcher
   
 
