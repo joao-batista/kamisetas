@@ -222,3 +222,40 @@ label{
     float: right;
 }
 
+.nav-squared {
+    margin-bottom: 15px;
+}
+.nav {
+    list-style: none;
+    margin-left: 0;
+    border: 1px solid #ddd;
+}
+
+
+.nav li {
+    display: inline;
+}
+
+
+.nav a {
+    display: inline-block;
+}
+
+.nav-squared>li a {
+    color: #545454;
+    min-width: 35px;
+    padding: 12px 0;
+    border: 1px solid #e7e7e7;
+    background: #FFF;
+    position: relative;
+    font-weight: normal;
+    width: 55px;
+    height: 34px;
+    overflow: hidden;
+}
+
+.nav-squared>li {
+    float: left;
+    text-align: center;
+    margin: 5px;
+}
