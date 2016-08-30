@@ -47,6 +47,20 @@
     </div>
     <br><br><br>
   </div>
+
+  <div class="form-group">
+    <%= f.label :size, "Size:", class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <% sizes.each do |s| %>
+        <div class="col-md-4">
+          <%= check_box_tag "product[size_ids][]", s.id, f.object.sizes.include?(s) %>
+          <%= s.description %>
+        </div>
+      <% end %>
+    </div>
+    <br><br><br>
+  </div>
+
   <div class="form-group">
     <%= f.label :picture, "Picture:", class: "col-md-2 control-label" %>
     <div class="col-md-6">

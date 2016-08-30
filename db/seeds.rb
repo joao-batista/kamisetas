@@ -34,3 +34,12 @@ puts "Gerando categorias(Category)..."
                 			 {description: "Desenhos"},
                 			 {description: "Programação"}])
 puts "Gerando categorias(Category)...[OK]"
+
+puts "Gerando tamanhos(Sizes)..."
+  Size.create!([{description: "PP"},
+                       {description: "P"},
+                       {description: "M"},
+                       {description: "G"},
+                       {description: "GG"},
+                       {description: "GGG"}])
+puts "Gerando tamanhos(Sizes)...[OK]"

@@ -9,6 +9,10 @@ module ApplicationHelper
   	Category.all
   end
 
+  def sizes
+    Size.all
+  end
+
   def precos
 	  precos = [
 	    ["1", "20"],
